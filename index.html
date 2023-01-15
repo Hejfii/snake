@@ -10,9 +10,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <canvas width="500" height="500" id="snakeArea"></canvas>
+    <div id="game">
+        <canvas width="500" height="500" id="snakeArea">
+        </canvas>
+
+        <p id="mid-game-score">Wynik: <span id="mid-score">1</span></p>
+
+        <div id="end-menu">
+            <h1>Przegrales</h1>
+            <p>Wynik: <span id="score">0</span></p>
+            <p>Najlepszy Wynik: <span id="highscore">0</span></p>
+            <button id="restart">Restart</button>
+        </div>
+    </div>
     
     <!-- JavaScript -->
+    <script src="js/snake.js"></script>
+    <script src="js/food.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
