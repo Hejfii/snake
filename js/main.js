@@ -83,4 +83,27 @@ document.addEventListener("keydown", (e) => {
     }
 })
 
+let oldX
+let oldY
+
+document.addEventListener("touchmove", (e) => {
+    let curX = e.touches[0].clientX
+    let curY = e.touches[0].clientY
+
+    if (curX && curX > oldX) {
+        snake.move(1, 0)
+    } else if (curX && curX < oldX) {
+        snake.move(-1, 0)
+    } else if (curY && curY > oldY) {
+        snake.move(0, 1)
+    } else if (curY && curY < oldY) {
+        snake.move(0, -1)
+    }
+
+    e.preventDefault()
+
+    oldX = curX
+    oldY = curY
+}, { passive: false })
+
 requestAnimationFrame(loop)
